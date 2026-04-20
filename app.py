@@ -502,42 +502,6 @@ df_mostrar.columns = ['N° Árbol', 'Nombre Común', 'Especie Científica', 'Añ
 
 st.dataframe(df_mostrar, use_container_width=True, height=400)
 
-# Botones de exportación
-st.subheader("💾 Exportar Datos")
-
-col_e1, col_e2, col_e3 = st.columns(3)
-
-with col_e1:
-    csv = df_mostrar.to_csv(index=False).encode('utf-8')
-    st.download_button(
-        label="📄 Descargar CSV",
-        data=csv,
-        file_name=f'inventario_cod_{datetime.now().strftime("%Y%m%d")}.csv',
-        mime='text/csv',
-    )
-
-with col_e2:
-    # Crear resumen ejecutivo
-    resumen = pd.DataFrame([metricas]).T
-    resumen.columns = ['Valor']
-    resumen_csv = resumen.to_csv().encode('utf-8')
-    
-    st.download_button(
-        label="📊 Resumen Ejecutivo CSV",
-        data=resumen_csv,
-        file_name=f'resumen_cod_{datetime.now().strftime("%Y%m%d")}.csv',
-        mime='text/csv',
-    )
-
-with col_e3:
-    especies_csv = especies_stats.to_csv().encode('utf-8')
-    
-    st.download_button(
-        label="🌿 Estadísticas por Especie CSV",
-        data=especies_csv,
-        file_name=f'especies_cod_{datetime.now().strftime("%Y%m%d")}.csv',
-        mime='text/csv',
-    )
 
 # FOOTER
 st.markdown("---")
