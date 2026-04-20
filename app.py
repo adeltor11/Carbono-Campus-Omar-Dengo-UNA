@@ -22,6 +22,10 @@ st.set_page_config(
 # Estilos CSS personalizados con colores UNA
 st.markdown("""
     <style>
+    /* Ocultar barra de herramientas de descarga en tablas */
+    [data-testid="stDataFrameToolbar"] {
+        display: none !important;
+    }
     .main {
         background-color: #f8f9fa;
     }
