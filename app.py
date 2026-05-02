@@ -114,7 +114,8 @@ except Exception as e:
     st.stop()
 
 # SIDEBAR - Filtros
-st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Logo_UNA.svg/1200px-Logo_UNA.svg.png", width=200)
+st.sidebar.image("https://commons.wikimedia.org/wiki/File:UNA.png", width=200)
+# https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Logo_UNA.svg/1200px-Logo_UNA.svg.png
 st.sidebar.title("🔍 Filtros")
 
 # Filtro de año
